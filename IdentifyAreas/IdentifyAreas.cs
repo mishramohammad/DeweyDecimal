@@ -94,7 +94,9 @@ namespace DeweySystem.IdentifyAreas
 
         private void nxtBtn2_Click(object sender, EventArgs e)
         {
-            //
+            DeweySystem.FindCalls.FindCallNumber findCallNumberForm = new DeweySystem.FindCalls.FindCallNumber();
+            findCallNumberForm.Show();
+            this.Hide();
         }
 
         private void submitBtn_Click(object sender, EventArgs e)

@@ -9,8 +9,6 @@ namespace DeweySystem.FindCalls
         public string CallNum { get; set; }
         public string Description { get; set; }
 
-        public CallNumbers() { }
-
         public CallNumbers(string callNum, string description)
         {
             CallNum = callNum;

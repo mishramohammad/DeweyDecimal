@@ -3,13 +3,21 @@
     public class TreeNode<T>
     {
         public T Data { get; set; }
+        public TreeNode<T> Parent { get; set; }
         public List<TreeNode<T>> Children { get; set; }
-
-        public TreeNode(T data)
+        public int GetHeight()
         {
-            Data = data;
-            Children = new List<TreeNode<T>>();
+            int height = 1;
+            TreeNode<T> current = this;
+            while (current.Parent != null)
+            {
+                height++;
+                current = current.Parent;
+            }
+            return height;
         }
     }
 
 }
+
+//reference: https://www.youtube.com/watch?v=K0-qs--naUo

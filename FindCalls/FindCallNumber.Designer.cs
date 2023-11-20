@@ -31,6 +31,8 @@
             lblHeading2 = new Label();
             lbelScore = new Label();
             ScoreNo = new Label();
+            subBtn = new Button();
+            mainBtn = new Button();
             SuspendLayout();
             // 
             // lblHeading2
@@ -50,7 +52,7 @@
             lbelScore.AutoSize = true;
             lbelScore.Font = new Font("Gill Sans Ultra Bold", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
             lbelScore.ForeColor = Color.MidnightBlue;
-            lbelScore.Location = new Point(541, 184);
+            lbelScore.Location = new Point(582, 130);
             lbelScore.Name = "lbelScore";
             lbelScore.Size = new Size(111, 31);
             lbelScore.TabIndex = 14;
@@ -62,12 +64,37 @@
             ScoreNo.AutoSize = true;
             ScoreNo.Font = new Font("Gill Sans Ultra Bold", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
             ScoreNo.ForeColor = Color.MidnightBlue;
-            ScoreNo.Location = new Point(640, 184);
+            ScoreNo.Location = new Point(680, 130);
             ScoreNo.Name = "ScoreNo";
             ScoreNo.Size = new Size(34, 31);
             ScoreNo.TabIndex = 15;
             ScoreNo.Text = "0";
             ScoreNo.Click += ScoreNo_Click;
+            // 
+            // subBtn
+            // 
+            subBtn.BackColor = Color.Gold;
+            subBtn.Font = new Font("Bahnschrift SemiBold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            subBtn.ForeColor = SystemColors.ActiveCaptionText;
+            subBtn.Location = new Point(117, 349);
+            subBtn.Name = "subBtn";
+            subBtn.Size = new Size(125, 41);
+            subBtn.TabIndex = 16;
+            subBtn.Text = "Submit";
+            subBtn.UseVisualStyleBackColor = false;
+            // 
+            // mainBtn
+            // 
+            mainBtn.BackColor = Color.AliceBlue;
+            mainBtn.Font = new Font("Bahnschrift SemiBold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            mainBtn.ForeColor = SystemColors.ActiveCaptionText;
+            mainBtn.Location = new Point(711, 401);
+            mainBtn.Name = "mainBtn";
+            mainBtn.Size = new Size(77, 37);
+            mainBtn.TabIndex = 17;
+            mainBtn.Text = "Main";
+            mainBtn.UseVisualStyleBackColor = false;
+            mainBtn.Click += mainBtn_Click;
             // 
             // FindCallNumber
             // 
@@ -75,11 +102,14 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.SteelBlue;
             ClientSize = new Size(800, 450);
+            Controls.Add(mainBtn);
+            Controls.Add(subBtn);
             Controls.Add(ScoreNo);
             Controls.Add(lbelScore);
             Controls.Add(lblHeading2);
             Name = "FindCallNumber";
             Text = "Find Call Number";
+            Load += FindCallNumber_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -89,5 +119,7 @@
         private Label lblHeading2;
         private Label lbelScore;
         private Label ScoreNo;
+        private Button subBtn;
+        private Button mainBtn;
     }
 }
