@@ -33,9 +33,9 @@ namespace DeweySystem.FindCalls
             //2nd level
             tree.Root.Children[0].Children = new List<TreeNode<CallNumbers>>()
             {
-                new TreeNode<CallNumbers>(){Data = new CallNumbers("003", "Systems"), Parent = tree.Root.Children[0]},
-                new TreeNode<CallNumbers>(){Data = new CallNumbers("004", "Data processing Computer science"), Parent = tree.Root.Children[0]},
-                new TreeNode<CallNumbers>(){Data = new CallNumbers("006", "Special computer methods"), Parent = tree.Root.Children[0]}
+                new TreeNode<CallNumbers>(){Data = new CallNumbers("010", "Bibliography"), Parent = tree.Root.Children[0]},
+                new TreeNode<CallNumbers>(){Data = new CallNumbers("030", "General encyclopedic works"), Parent = tree.Root.Children[0]},
+                new TreeNode<CallNumbers>(){Data = new CallNumbers("050", "General serials & their indexes"), Parent = tree.Root.Children[0]}
             };
 
             tree.Root.Children[1].Children = new List<TreeNode<CallNumbers>>()
@@ -101,189 +101,219 @@ namespace DeweySystem.FindCalls
                 new TreeNode<CallNumbers>(){Data = new CallNumbers("990", "General history of other areas"), Parent = tree.Root.Children[9]}
             };
 
-            //3rd level
+            //THIRD-LEVEL NODES
 
-            tree.Root.Children[0].Children[0].Children = new List<TreeNode<CallNumbers>>()                                                        
-            {                                                                                                                              
-                new TreeNode<CallNumbers>(){Data = new CallNumbers("111", "Ontology"), Parent = tree.Root.Children[0].Children[0]},                                 
-                new TreeNode<CallNumbers>(){Data = new CallNumbers("113", "Cosmology"), Parent = tree.Root.Children[0].Children[0]},                           
-                new TreeNode<CallNumbers>(){Data = new CallNumbers("114", "Space"), Parent = tree.Root.Children[0].Children[0]}                               
+            //010
+            tree.Root.Children[0].Children[0].Children = new List<TreeNode<CallNumbers>>()
+            {
+                new TreeNode<CallNumbers>(){Data = new CallNumbers("011", "Bibliographies"), Parent = tree.Root.Children[0].Children[0]},
+                new TreeNode<CallNumbers>(){Data = new CallNumbers("019", "Dictionary catalogs"), Parent = tree.Root.Children[0].Children[0]}
             };
 
-            tree.Root.Children[0].Children[1].Children = new List<TreeNode<CallNumbers>>()                                                      
-            {                                                                                                                                
-                new TreeNode<CallNumbers>(){Data = new CallNumbers("121", "Epistemology (Theory of knowledge)"), Parent = tree.Root.Children[0].Children[1]},       
-                new TreeNode<CallNumbers>(){Data = new CallNumbers("122", "Causation"), Parent = tree.Root.Children[0].Children[1]},                                 
-                new TreeNode<CallNumbers>(){Data = new CallNumbers("123", "Determinism and indeterminism"), Parent = tree.Root.Children[0].Children[1]}             
+            //030
+            tree.Root.Children[0].Children[1].Children = new List<TreeNode<CallNumbers>>()
+            {
+                new TreeNode<CallNumbers>(){Data = new CallNumbers("032", "General encyclopedic works in English"), Parent = tree.Root.Children[0].Children[1]},
+                new TreeNode<CallNumbers>(){Data = new CallNumbers("038", "General encyclopedic works in Scandinavian languages"), Parent = tree.Root.Children[0].Children[1]}
             };
 
-            tree.Root.Children[0].Children[2].Children = new List<TreeNode<CallNumbers>>()                                                                                               
-            {                                                                                                                                                                      
-                new TreeNode<CallNumbers>(){Data = new CallNumbers("131", "Parapsychological and occult methods for achieving well-being, happiness, success"), Parent = tree.Root.Children[0].Children[2]}, 
-                new TreeNode<CallNumbers>(){Data = new CallNumbers("133", "Specific topics in parapsychology and occultism"), Parent = tree.Root.Children[0].Children[2]},                                   
-                new TreeNode<CallNumbers>(){Data = new CallNumbers("135", "Dreams and mysteries"), Parent = tree.Root.Children[0].Children[2]}                                                                
+            //050
+            tree.Root.Children[0].Children[2].Children = new List<TreeNode<CallNumbers>>()
+            {
+                new TreeNode<CallNumbers>(){Data = new CallNumbers("056", "General serials & their indexes In Spanish"), Parent = tree.Root.Children[0].Children[2]},
+                new TreeNode<CallNumbers>(){Data = new CallNumbers("057", "General serials & their indexes In Slavic languages"), Parent = tree.Root.Children[0].Children[2]}
             };
 
-            tree.Root.Children[0].Children[3].Children = new List<TreeNode<CallNumbers>>()                                                        
-            {                                                                                                                                
-                new TreeNode<CallNumbers>(){Data = new CallNumbers("141", "Idealism and related systems and doctrines"), Parent = tree.Root.Children[0].Children[3]}, 
-                new TreeNode<CallNumbers>(){Data = new CallNumbers("142", "Critical philosophy"), Parent = tree.Root.Children[0].Children[3]},                        
-                new TreeNode<CallNumbers>(){Data = new CallNumbers("143", "Bergsonism and intuitionism"), Parent = tree.Root.Children[0].Children[3]}                 
+            //110
+            tree.Root.Children[1].Children[0].Children = new List<TreeNode<CallNumbers>>()
+            {
+                new TreeNode<CallNumbers>(){Data = new CallNumbers("111", "Ontology"), Parent = tree.Root.Children[1].Children[0]},
+                new TreeNode<CallNumbers>(){Data = new CallNumbers("113", "Cosmology (Philosophy of nature)"), Parent = tree.Root.Children[1].Children[0]}
             };
 
-            tree.Root.Children[0].Children[4].Children = new List<TreeNode<CallNumbers>>()                                                                              
-            {                                                                                                                                                      
-                new TreeNode<CallNumbers>(){Data = new CallNumbers("152", "Sensory perception, movement, emotions, and physiological drives"), Parent = tree.Root.Children[0].Children[4]}, 
-                new TreeNode<CallNumbers>(){Data = new CallNumbers("153", "Conscious mental processes and intelligence"), Parent = tree.Root.Children[0].Children[4]},                      
-                new TreeNode<CallNumbers>(){Data = new CallNumbers("154", "Subconscious and altered states and processes"), Parent = tree.Root.Children[0].Children[4]}                   
+            //150
+            tree.Root.Children[1].Children[1].Children = new List<TreeNode<CallNumbers>>()
+            {
+                new TreeNode<CallNumbers>(){Data = new CallNumbers("153", "Mental processes & intelligence"), Parent = tree.Root.Children[1].Children[1]},
+                new TreeNode<CallNumbers>(){Data = new CallNumbers("156", "Comparative psychology"), Parent = tree.Root.Children[1].Children[1]}
             };
 
-            tree.Root.Children[1].Children[0].Children = new List<TreeNode<CallNumbers>>()                                                               
-            {                                                                                                                                       
-                new TreeNode<CallNumbers>(){Data = new CallNumbers("211", "Concepts of God"), Parent = tree.Root.Children[1].Children[0]},                                   
-                new TreeNode<CallNumbers>(){Data = new CallNumbers("212", "Existence, ways of knowing God, attributes of God"), Parent = tree.Root.Children[1].Children[0]}, 
-                new TreeNode<CallNumbers>(){Data = new CallNumbers("213", "Creation"), Parent = tree.Root.Children[1].Children[0]}                                           
+            //180
+            tree.Root.Children[1].Children[2].Children = new List<TreeNode<CallNumbers>>()
+            {
+                new TreeNode<CallNumbers>(){Data = new CallNumbers("181", "Oriental philosophy"), Parent = tree.Root.Children[1].Children[2]},
+                new TreeNode<CallNumbers>(){Data = new CallNumbers("184", "Platonic philosophy"), Parent = tree.Root.Children[1].Children[2]}
             };
 
-            tree.Root.Children[1].Children[1].Children = new List<TreeNode<CallNumbers>>()                                                        
-            {                                                                                                                                
-                new TreeNode<CallNumbers>(){Data = new CallNumbers("221", "Old Testament (Tanakh)"), Parent = tree.Root.Children[1].Children[1]},                     
-                new TreeNode<CallNumbers>(){Data = new CallNumbers("222", "Historical books of Old Testament"), Parent = tree.Root.Children[1].Children[1]},          
-                new TreeNode<CallNumbers>(){Data = new CallNumbers("223", "Poetic books of Old Testament"), Parent = tree.Root.Children[1].Children[1]}               
+            //210
+            tree.Root.Children[2].Children[0].Children = new List<TreeNode<CallNumbers>>()
+            {
+                new TreeNode<CallNumbers>(){Data = new CallNumbers("214", "Theodicy"), Parent = tree.Root.Children[2].Children[0]},
+                new TreeNode<CallNumbers>(){Data = new CallNumbers("215", "Science & Religion"), Parent = tree.Root.Children[2].Children[0]}
             };
 
-            tree.Root.Children[1].Children[2].Children = new List<TreeNode<CallNumbers>>()                                         
-            {                                                                                                                  
-                new TreeNode<CallNumbers>(){Data = new CallNumbers("231", "God"), Parent = tree.Root.Children[1].Children[2]},                          
-                new TreeNode<CallNumbers>(){Data = new CallNumbers("232", "Jesus Christ and his family"), Parent = tree.Root.Children[1].Children[2]}, 
-                new TreeNode<CallNumbers>(){Data = new CallNumbers("233", "Humankind"), Parent = tree.Root.Children[1].Children[2]}                     
+            //280
+            tree.Root.Children[2].Children[1].Children = new List<TreeNode<CallNumbers>>()
+            {
+                new TreeNode<CallNumbers>(){Data = new CallNumbers("281", "Early church & Eastern churches"), Parent = tree.Root.Children[2].Children[1]},
+                new TreeNode<CallNumbers>(){Data = new CallNumbers("287", "Methodist & related churches"), Parent = tree.Root.Children[2].Children[1]}
             };
 
-            tree.Root.Children[1].Children[3].Children = new List<TreeNode<CallNumbers>>()                                                              
-            {                                                                                                                                     
-                new TreeNode<CallNumbers>(){Data = new CallNumbers("241", "Christian ethics"), Parent = tree.Root.Children[1].Children[3]},                                  
-                new TreeNode<CallNumbers>(){Data = new CallNumbers("242", "Devotional literature"), Parent = tree.Root.Children[1].Children[3]},                             
-                new TreeNode<CallNumbers>(){Data = new CallNumbers("243", "Evangelistic writings for individuals and families"), Parent = tree.Root.Children[1].Children[3]} 
-            };
-
-            tree.Root.Children[1].Children[4].Children = new List<TreeNode<CallNumbers>>()                                                        
-            {                                                                                                                                 
-                new TreeNode<CallNumbers>(){Data = new CallNumbers("251", "Preaching (Homiletics)"), Parent = tree.Root.Children[1].Children[4]},                      
-                new TreeNode<CallNumbers>(){Data = new CallNumbers("252", "Texts of sermons"), Parent = tree.Root.Children[1].Children[4]},                            
-                new TreeNode<CallNumbers>(){Data = new CallNumbers("253", "Pastoral office and work (Pastoral theology)"), Parent = tree.Root.Children[1].Children[4]} 
+            //290
+            tree.Root.Children[2].Children[2].Children = new List<TreeNode<CallNumbers>>()
+            {
+                new TreeNode<CallNumbers>(){Data = new CallNumbers("291", "Comparative religion"), Parent = tree.Root.Children[2].Children[2]},
+                new TreeNode<CallNumbers>(){Data = new CallNumbers("294", "Religions of Indic origin"), Parent = tree.Root.Children[2].Children[2]}
             };
 
 
-            tree.Root.Children[2].Children[0].Children = new List<TreeNode<CallNumbers>>()                                                               
-            {                                                                                                                                      
-                new TreeNode<CallNumbers>(){Data = new CallNumbers("314", "General statistics of Europe"), Parent = tree.Root.Children[2].Children[0]},                      
-                new TreeNode<CallNumbers>(){Data = new CallNumbers("315", "General statistics of Asia"), Parent = tree.Root.Children[2].Children[0]},                      
-                new TreeNode<CallNumbers>(){Data = new CallNumbers("316", "General statistics of Africa"), Parent = tree.Root.Children[2].Children[0]}                       
+            //310
+            tree.Root.Children[3].Children[0].Children = new List<TreeNode<CallNumbers>>()
+            {
+                new TreeNode<CallNumbers>(){Data = new CallNumbers("314", "General statistics Of Europe"), Parent = tree.Root.Children[3].Children[0]},
+                new TreeNode<CallNumbers>(){Data = new CallNumbers("315", "General statistics Of Asia"), Parent = tree.Root.Children[3].Children[0]}
             };
 
-            tree.Root.Children[2].Children[1].Children = new List<TreeNode<CallNumbers>>()                                                                     
-            {                                                                                                                                           
-                new TreeNode<CallNumbers>(){Data = new CallNumbers("321", "Systems of governments and states"), Parent = tree.Root.Children[2].Children[1]},                     
-                new TreeNode<CallNumbers>(){Data = new CallNumbers("322", "Relation of state to organized groups and their members"), Parent = tree.Root.Children[2].Children[1]}, 
-                new TreeNode<CallNumbers>(){Data = new CallNumbers("323", "Civil and political rights"), Parent = tree.Root.Children[2].Children[1]}                               
+            //320
+            tree.Root.Children[3].Children[1].Children = new List<TreeNode<CallNumbers>>()
+            {
+                new TreeNode<CallNumbers>(){Data = new CallNumbers("325", "International migration & colonization"), Parent = tree.Root.Children[3].Children[1]},
+                new TreeNode<CallNumbers>(){Data = new CallNumbers("328", "The legislative process"), Parent = tree.Root.Children[3].Children[1]}
             };
 
-            tree.Root.Children[2].Children[2].Children = new List<TreeNode<CallNumbers>>()                                          
-            {                                                                                                                 
-                new TreeNode<CallNumbers>(){Data = new CallNumbers("331", "Labour economics"), Parent = tree.Root.Children[2].Children[2]},             
-                new TreeNode<CallNumbers>(){Data = new CallNumbers("332", "Financial economics"), Parent = tree.Root.Children[2].Children[2]},          
-                new TreeNode<CallNumbers>(){Data = new CallNumbers("333", "Economics of land and energy"), Parent = tree.Root.Children[2].Children[2]}  
+            //370
+            tree.Root.Children[3].Children[2].Children = new List<TreeNode<CallNumbers>>()
+            {
+                new TreeNode<CallNumbers>(){Data = new CallNumbers("372", "Elementary education"), Parent = tree.Root.Children[3].Children[2]},
+                new TreeNode<CallNumbers>(){Data = new CallNumbers("375", "Curriculums"), Parent = tree.Root.Children[3].Children[2]}
             };
 
-            tree.Root.Children[2].Children[3].Children = new List<TreeNode<CallNumbers>>()                                                                                                   
-            {                                                                                                                                                                             
-                new TreeNode<CallNumbers>(){Data = new CallNumbers("341", "Law of nations"), Parent = tree.Root.Children[2].Children[3]},                                                                           
-                new TreeNode<CallNumbers>(){Data = new CallNumbers("342", "Constitutional and administrative law"), Parent = tree.Root.Children[2].Children[3]},                                                    
-                new TreeNode<CallNumbers>(){Data = new CallNumbers("343", "Military, defense, public property, public finance, tax, commerce (trade), industrial law"), Parent = tree.Root.Children[2].Children[3]} 
+            //410
+            tree.Root.Children[4].Children[0].Children = new List<TreeNode<CallNumbers>>()
+            {
+                new TreeNode<CallNumbers>(){Data = new CallNumbers("414", "Phonology"), Parent = tree.Root.Children[4].Children[0]},
+                new TreeNode<CallNumbers>(){Data = new CallNumbers("415", "Structural systems (Grammar)"), Parent = tree.Root.Children[4].Children[0]}
             };
 
-            tree.Root.Children[2].Children[4].Children = new List<TreeNode<CallNumbers>>()                                                               
-            {                                                                                                                                      
-                new TreeNode<CallNumbers>(){Data = new CallNumbers("351", "Public administration"), Parent = tree.Root.Children[2].Children[4]},                            
-                new TreeNode<CallNumbers>(){Data = new CallNumbers("352", "General considerations of public administration"), Parent = tree.Root.Children[2].Children[4]},   
-                new TreeNode<CallNumbers>(){Data = new CallNumbers("353", "Specific fields of public administration"), Parent = tree.Root.Children[2].Children[4]}           
+            //450
+            tree.Root.Children[4].Children[1].Children = new List<TreeNode<CallNumbers>>()
+            {
+                new TreeNode<CallNumbers>(){Data = new CallNumbers("451", "Italian writing system & phonology"), Parent = tree.Root.Children[4].Children[1]},
+                new TreeNode<CallNumbers>(){Data = new CallNumbers("452", "Italian etymology"), Parent = tree.Root.Children[4].Children[1]}
             };
 
-        
-            tree.Root.Children[3].Children[0].Children = new List<TreeNode<CallNumbers>>()                                                               
-            {                                                                                                                                       
-                new TreeNode<CallNumbers>(){Data = new CallNumbers("411", "Writing systems of standard forms of languages"), Parent = tree.Root.Children[3].Children[0]},    
-                new TreeNode<CallNumbers>(){Data = new CallNumbers("412", "Etymology of standard forms of languages"), Parent = tree.Root.Children[3].Children[0]},         
-                new TreeNode<CallNumbers>(){Data = new CallNumbers("413", "Dictionaries of standard forms of languages"), Parent = tree.Root.Children[3].Children[0]}        
+            //470
+            tree.Root.Children[4].Children[2].Children = new List<TreeNode<CallNumbers>>()
+            {
+                new TreeNode<CallNumbers>(){Data = new CallNumbers("471", "Classical Latin writing & phonology"), Parent = tree.Root.Children[4].Children[2]},
+                new TreeNode<CallNumbers>(){Data = new CallNumbers("473", "Classical Latin dictionaries"), Parent = tree.Root.Children[4].Children[2]}
             };
 
-            tree.Root.Children[3].Children[1].Children = new List<TreeNode<CallNumbers>>()                                                                      
-            {                                                                                                                                              
-                new TreeNode<CallNumbers>(){Data = new CallNumbers("421", "Writing system, phonology, phonetics of standard English"), Parent = tree.Root.Children[3].Children[1]}, 
-                new TreeNode<CallNumbers>(){Data = new CallNumbers("422", "Etymology of standard English"), Parent = tree.Root.Children[3].Children[1]},                           
-                new TreeNode<CallNumbers>(){Data = new CallNumbers("423", "Dictionaries of standard English"), Parent = tree.Root.Children[3].Children[1]}                         
+            //510
+            tree.Root.Children[5].Children[0].Children = new List<TreeNode<CallNumbers>>()
+            {
+                new TreeNode<CallNumbers>(){Data = new CallNumbers("514", "Topology"), Parent = tree.Root.Children[5].Children[0]},
+                new TreeNode<CallNumbers>(){Data = new CallNumbers("515", "Analysis"), Parent = tree.Root.Children[5].Children[0]}
             };
 
-            tree.Root.Children[3].Children[2].Children = new List<TreeNode<CallNumbers>>()                                                                         
-            {                                                                                                                                                
-                new TreeNode<CallNumbers>(){Data = new CallNumbers("431", "Writing systems, phonology, phonetics of standard German"), Parent = tree.Root.Children[3].Children[2]},   
-                new TreeNode<CallNumbers>(){Data = new CallNumbers("432", "Etymology of standard German"), Parent = tree.Root.Children[3].Children[2]},                                
-                new TreeNode<CallNumbers>(){Data = new CallNumbers("433", "Dictionaries of standard German"), Parent = tree.Root.Children[3].Children[2]}                             
+            //530
+            tree.Root.Children[5].Children[1].Children = new List<TreeNode<CallNumbers>>()
+            {
+                new TreeNode<CallNumbers>(){Data = new CallNumbers("531", "Classical mechanics Solid mechanics"), Parent = tree.Root.Children[5].Children[1]},
+                new TreeNode<CallNumbers>(){Data = new CallNumbers("533", "Gas mechanics"), Parent = tree.Root.Children[5].Children[1]}
             };
 
-            tree.Root.Children[3].Children[3].Children = new List<TreeNode<CallNumbers>>()                                                                      
-            {                                                                                                                                          
-                new TreeNode<CallNumbers>(){Data = new CallNumbers("441", "Writing systems, phonology, phonetics of standard French"), Parent = tree.Root.Children[3].Children[3]}, 
-                new TreeNode<CallNumbers>(){Data = new CallNumbers("442", "Etymology of standard French"), Parent = tree.Root.Children[3].Children[3]},                             
-                new TreeNode<CallNumbers>(){Data = new CallNumbers("443", "Dictionaries of standard French"), Parent = tree.Root.Children[3].Children[3]}                           
+            //580
+            tree.Root.Children[5].Children[2].Children = new List<TreeNode<CallNumbers>>()
+            {
+                new TreeNode<CallNumbers>(){Data = new CallNumbers("581", "Botany"), Parent = tree.Root.Children[5].Children[2]},
+                new TreeNode<CallNumbers>(){Data = new CallNumbers("588", "Bryophyta"), Parent = tree.Root.Children[5].Children[2]}
             };
 
-            tree.Root.Children[3].Children[4].Children = new List<TreeNode<CallNumbers>>()                                                                        
-            {                                                                                                                                                
-                new TreeNode<CallNumbers>(){Data = new CallNumbers("451", "Writing systems, phonology, phonetics of standard Italian"), Parent = tree.Root.Children[3].Children[4]}, 
-                new TreeNode<CallNumbers>(){Data = new CallNumbers("452", "Etymology of standard Italian"), Parent = tree.Root.Children[3].Children[4]},                              
-                new TreeNode<CallNumbers>(){Data = new CallNumbers("453", "Dictionaries of standard Italian"), Parent = tree.Root.Children[3].Children[4]}                            
+            //640
+            tree.Root.Children[6].Children[0].Children = new List<TreeNode<CallNumbers>>()
+            {
+                new TreeNode<CallNumbers>(){Data = new CallNumbers("643", "Housing & household equipment"), Parent = tree.Root.Children[6].Children[0]},
+                new TreeNode<CallNumbers>(){Data = new CallNumbers("644", "Household utilities"), Parent = tree.Root.Children[6].Children[0]}
             };
 
-       
-            tree.Root.Children[4].Children[0].Children = new List<TreeNode<CallNumbers>>()                                                  
-            {                                                                                                                         
-                new TreeNode<CallNumbers>(){Data =  new CallNumbers("511", "General principles of mathematics"), Parent = tree.Root.Children[4].Children[0]},   
-                new TreeNode<CallNumbers>(){Data =  new CallNumbers("512", "Algebra"), Parent = tree.Root.Children[4].Children[0]},                             
-                new TreeNode<CallNumbers>(){Data =  new CallNumbers("513", "Arithmetic"), Parent = tree.Root.Children[4].Children[0]}                          
+            //650
+            tree.Root.Children[6].Children[1].Children = new List<TreeNode<CallNumbers>>()
+            {
+                new TreeNode<CallNumbers>(){Data = new CallNumbers("651", "Office services"), Parent = tree.Root.Children[6].Children[1]},
+                new TreeNode<CallNumbers>(){Data = new CallNumbers("653", "Shorthand"), Parent = tree.Root.Children[6].Children[1]}
             };
 
-            tree.Root.Children[4].Children[1].Children = new List<TreeNode<CallNumbers>>()                                                                      
-            {                                                                                                                                              
-                new TreeNode<CallNumbers>(){Data = new CallNumbers("521", "Celestial mechanics"), Parent = tree.Root.Children[4].Children[1]}, 
-                new TreeNode<CallNumbers>(){Data = new CallNumbers("522", "Techniques, procedures, apparatus, equipment, materials"), Parent = tree.Root.Children[4].Children[1]},                           
-                new TreeNode<CallNumbers>(){Data = new CallNumbers("523", "Specific celestial bodies and phenomena"), Parent = tree.Root.Children[4].Children[1]}                          
+            //660
+            tree.Root.Children[6].Children[2].Children = new List<TreeNode<CallNumbers>>()
+            {
+                new TreeNode<CallNumbers>(){Data = new CallNumbers("663", "Beverage technology"), Parent = tree.Root.Children[6].Children[2]},
+                new TreeNode<CallNumbers>(){Data = new CallNumbers("664", "Food technology"), Parent = tree.Root.Children[6].Children[2]}
             };
 
-            tree.Root.Children[4].Children[2].Children = new List<TreeNode<CallNumbers>>()                                       
-            {                                                                                                               
-                new TreeNode<CallNumbers>(){Data = new CallNumbers("531", "Classical mechanics"), Parent = tree.Root.Children[4].Children[2]},       
-                new TreeNode<CallNumbers>(){Data = new CallNumbers("532", "Fluid mechanics"), Parent = tree.Root.Children[4].Children[2]},          
-                new TreeNode<CallNumbers>(){Data = new CallNumbers("533", "Pneumatics (Gas mechanics)"), Parent = tree.Root.Children[4].Children[2]} 
+            //710
+            tree.Root.Children[7].Children[0].Children = new List<TreeNode<CallNumbers>>()
+            {
+                new TreeNode<CallNumbers>(){Data = new CallNumbers("713", "Landscape architecture of trafficways"), Parent = tree.Root.Children[7].Children[0]},
+                new TreeNode<CallNumbers>(){Data = new CallNumbers("714", "Water features"), Parent = tree.Root.Children[7].Children[0]}
             };
 
-            tree.Root.Children[4].Children[3].Children = new List<TreeNode<CallNumbers>>()                                                                      
-            {                                                                                                                                              
-                new TreeNode<CallNumbers>(){Data = new CallNumbers("541", "Physical chemistry"), Parent = tree.Root.Children[4].Children[3]},                                       
-                new TreeNode<CallNumbers>(){Data = new CallNumbers("542", "Techniques, procedures, apparatus, equipment, materials"), Parent = tree.Root.Children[4].Children[3]},  
-                new TreeNode<CallNumbers>(){Data = new CallNumbers("543", "Analytical chemistry"), Parent = tree.Root.Children[4].Children[3]}                                      
+            //730
+            tree.Root.Children[7].Children[1].Children = new List<TreeNode<CallNumbers>>()
+            {
+                new TreeNode<CallNumbers>(){Data = new CallNumbers("733", "Greek, Etruscan, Roman sculpture"), Parent = tree.Root.Children[7].Children[1]},
+                new TreeNode<CallNumbers>(){Data = new CallNumbers("736", "Carving & carvings"), Parent = tree.Root.Children[7].Children[1]}
             };
 
-            tree.Root.Children[4].Children[4].Children = new List<TreeNode<CallNumbers>>()                                                                        
-            {                                                                                                                                               
-                new TreeNode<CallNumbers>(){Data = new CallNumbers("551", "Geology, hydrology, meteorology"), Parent = tree.Root.Children[4].Children[4]},  
-                new TreeNode<CallNumbers>(){Data = new CallNumbers("552", "Petrology"), Parent = tree.Root.Children[4].Children[4]},                             
-                new TreeNode<CallNumbers>(){Data = new CallNumbers("553", "Economic geology"), Parent = tree.Root.Children[4].Children[4]}                            
+            //770
+            tree.Root.Children[7].Children[2].Children = new List<TreeNode<CallNumbers>>()
+            {
+                new TreeNode<CallNumbers>(){Data = new CallNumbers("772", "Metallic salt processes"), Parent = tree.Root.Children[7].Children[2]},
+                new TreeNode<CallNumbers>(){Data = new CallNumbers("773", "Pigment processes of printing"), Parent = tree.Root.Children[7].Children[2]}
             };
 
+            //840
+            tree.Root.Children[8].Children[0].Children = new List<TreeNode<CallNumbers>>()
+            {
+                new TreeNode<CallNumbers>(){Data = new CallNumbers("847", "French Canadian"), Parent = tree.Root.Children[8].Children[0]},
+                new TreeNode<CallNumbers>(){Data = new CallNumbers("848", "Provencal"), Parent = tree.Root.Children[8].Children[0]}
+            };
+
+            //860
+            tree.Root.Children[8].Children[1].Children = new List<TreeNode<CallNumbers>>()
+            {
+                new TreeNode<CallNumbers>(){Data = new CallNumbers("864", "1700-1800"), Parent = tree.Root.Children[8].Children[1]},
+                new TreeNode<CallNumbers>(){Data = new CallNumbers("867", "Catalan"), Parent = tree.Root.Children[8].Children[1]}
+            };
+
+            //870
+            tree.Root.Children[8].Children[2].Children = new List<TreeNode<CallNumbers>>()
+            {
+                new TreeNode<CallNumbers>(){Data = new CallNumbers("871", "Latin Authors"), Parent = tree.Root.Children[8].Children[2]},
+                new TreeNode<CallNumbers>(){Data = new CallNumbers("872", "Collections of Latin prose or poetry"), Parent = tree.Root.Children[8].Children[2]}
+            };
+
+            //910
+            tree.Root.Children[9].Children[0].Children = new List<TreeNode<CallNumbers>>()
+            {
+                new TreeNode<CallNumbers>(){Data = new CallNumbers("911", "Historical geography"), Parent = tree.Root.Children[9].Children[0]},
+                new TreeNode<CallNumbers>(){Data = new CallNumbers("913", "Ancient world"), Parent = tree.Root.Children[9].Children[0]}
+            };
+
+            //950
+            tree.Root.Children[9].Children[1].Children = new List<TreeNode<CallNumbers>>()
+            {
+                new TreeNode<CallNumbers>(){Data = new CallNumbers("952", "General history of Asia Japan"), Parent = tree.Root.Children[9].Children[1]},
+                new TreeNode<CallNumbers>(){Data = new CallNumbers("954", "General history of Asia South Asia India"), Parent = tree.Root.Children[9].Children[1]}
+            };
+
+            //990
+            tree.Root.Children[9].Children[2].Children = new List<TreeNode<CallNumbers>>()
+            {
+                new TreeNode<CallNumbers>(){Data = new CallNumbers("993", "General history of other areas New Zealand"), Parent = tree.Root.Children[9].Children[2]},
+                new TreeNode<CallNumbers>(){Data = new CallNumbers("995", "General history of other areas Melanesia New Guinea"), Parent = tree.Root.Children[9].Children[2]}
+            };
         }
-
-
     }
 }
 
