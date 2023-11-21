@@ -177,6 +177,11 @@ namespace DeweySystem.IdentifyAreas
             replaceBooksForm.Show();
             this.Hide();
         }
+
+        private void IdentifyAreas_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

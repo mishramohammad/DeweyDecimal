@@ -173,6 +173,7 @@
             Controls.Add(lblHeading);
             Name = "IdentifyAreas";
             Text = "Identify Areas";
+            Load += IdentifyAreas_Load;
             ResumeLayout(false);
             PerformLayout();
         }
