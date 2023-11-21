@@ -26,10 +26,18 @@ namespace DeweySystem.FindCalls
         private static List<string> callNos = new List<string>
         { "000","100", "200", "300", "400", "500", "600", "700", "800", "900" };
 
+
         public FindCallNumber()
         {
             InitializeComponent();
+            LoadData();
+        }
 
+        private void LoadData()
+        {
+            var dataLoad = new DataLoad();
+            root = dataLoad.LoadDataFromFile("C:\\Users\\mishr\\source\\repos\\DeweySystem\\data\\datafile.json");
+            GenerateNewQuestion();
         }
 
         private void lblHeading2_Click(object sender, EventArgs e)
@@ -49,10 +57,7 @@ namespace DeweySystem.FindCalls
 
         private void FindCallNumber_Load(object sender, EventArgs e)
         {
-            var dataLoad = new DataLoad();
-            root = dataLoad.LoadDataFromFile("C:\\Users\\mishr\\source\\repos\\DeweySystem\\data\\datafile.json");
-            GenerateNewQuestion();
-
+            LoadData();
         }
 
         private void mainBtn_Click(object sender, EventArgs e)
@@ -67,6 +72,11 @@ namespace DeweySystem.FindCalls
             GenerateNewQuestion();
         }
 
+        private int level = 0;  // The current level of the quiz
+        private List<CallNumbers> currentLevelOptions;  // The options at the current level
+
+        //reference: https://stackoverflow.com/questions/12957125/quiz-game-application
+
         private void GenerateNewQuestion()
         {
             if (root?.Children == null)
@@ -75,31 +85,29 @@ namespace DeweySystem.FindCalls
                 return;
             }
 
-            //randomly select a third-level entry.
-            var thirdLevelNodes = root.Children.SelectMany(c => c.Children).SelectMany(c => c.Children).ToList();
-            correctAnswer = thirdLevelNodes[random.Next(thirdLevelNodes.Count)];
+            //random call number to be the correct answer
+            correctAnswer = root.Children[random.Next(root.Children.Count)];
 
-            //check if correctAnswer or correctAnswer.Parent is null.
-            if (correctAnswer?.Parent?.Parent == null)
-            {
-                MessageBox.Show("Error: Data not loaded correctly.");
-                return;
-            }
+            //description label
+            descLabel.Text = correctAnswer.Label;
 
-            // Select the correct top-level category and three incorrect ones.
-            currentOptions = new List<CallNumbers> { correctAnswer.Parent.Parent };
-            while (currentOptions.Count < 4)
+            //three random call numbers to be the incorrect answers
+            var incorrectAnswers = new List<CallNumbers>();
+            while (incorrectAnswers.Count < 3)
             {
-                var randomOption = root.Children[random.Next(root.Children.Count)];
-                if (!currentOptions.Contains(randomOption))
+                var incorrectAnswer = root.Children[random.Next(root.Children.Count)];
+                if (incorrectAnswer != correctAnswer && !incorrectAnswers.Contains(incorrectAnswer))
                 {
-                    currentOptions.Add(randomOption);
+                    incorrectAnswers.Add(incorrectAnswer);
                 }
             }
 
-            // Shuffle the options and display them.
-            currentOptions = currentOptions.OrderBy(_ => random.Next()).ToList();
-            foreach (var option in currentOptions)
+            //correct answer and the incorrect answers
+            currentLevelOptions = new List<CallNumbers> { correctAnswer }.Concat(incorrectAnswers).ToList();
+
+            //current level options
+            choiceBox.Items.Clear();
+            foreach (var option in currentLevelOptions)
             {
                 choiceBox.Items.Add(option.Id + " " + option.Label);
             }
@@ -107,7 +115,19 @@ namespace DeweySystem.FindCalls
 
         private void subBtn_Click(object sender, EventArgs e)
         {
-            if (choiceBox.SelectedItem.ToString() == correctAnswer.Parent.Parent.Id + " " + correctAnswer.Parent.Parent.Label)
+            if (choiceBox.SelectedItem == null)
+            {
+                MessageBox.Show("Please select an item.");
+                return;
+            }
+
+            var selectedOptionString = (string)choiceBox.SelectedItem;
+            var selectedOptionParts = selectedOptionString.Split(' ');
+            var selectedOptionId = selectedOptionParts[0];
+            var selectedOptionLabel = string.Join(' ', selectedOptionParts.Skip(1));
+            var selectedOption = currentOptions?.FirstOrDefault(op => op.Id == selectedOptionId && op.Label == selectedOptionLabel);
+
+            if (selectedOption != null && selectedOption.Id == correctAnswer.Id && selectedOption.Label == correctAnswer.Label)
             {
                 score += 5;
                 ScoreNo.Text = score.ToString();
@@ -116,7 +136,6 @@ namespace DeweySystem.FindCalls
                 // correct sound when the answer is correct
                 PlaySound(@"C:\Users\mishr\Dropbox\My PC (LAPTOP-B41IIIGC)\Downloads\correct-6033.mp3");
 
-                // Generate next question.
                 GenerateNewQuestion();
             }
             else
@@ -128,18 +147,20 @@ namespace DeweySystem.FindCalls
             }
         }
 
+
+
         private void PlaySound(string filePath)
         {
             try
             {
-                using (var reader = new Mp3FileReader(filePath))
-                using (var waveOut = new WaveOutEvent())
+                using (var reader = new AudioFileReader(filePath))
+                using (var outputDevice = new WaveOutEvent())
                 {
-                    waveOut.Init(reader);
-                    waveOut.Play();
-                    while (waveOut.PlaybackState == PlaybackState.Playing)
+                    outputDevice.Init(reader);
+                    outputDevice.Play();
+                    while (outputDevice.PlaybackState == PlaybackState.Playing)
                     {
-                        System.Threading.Thread.Sleep(100);
+                        Thread.Sleep(1000);
                     }
                 }
             }

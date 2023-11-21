@@ -17,18 +17,6 @@ namespace DeweySystem.FindCalls
             return root;
         }
 
-        private CallNumbers FindNodeByCallNum(CallNumbers root, string code)
-        {
-            if (root.Id == code) return root;
-
-            foreach (var child in root.Children)
-            {
-                var result = FindNodeByCallNum(child, code);
-                if (result != null) return result;
-            }
-
-            return null;
-        }
     }
 
 }

@@ -119,8 +119,8 @@
             // 
             descLabel.AutoSize = true;
             descLabel.Font = new Font("Bahnschrift", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            descLabel.ForeColor = SystemColors.ButtonHighlight;
-            descLabel.Location = new Point(43, 130);
+            descLabel.ForeColor = Color.MidnightBlue;
+            descLabel.Location = new Point(43, 173);
             descLabel.Name = "descLabel";
             descLabel.Size = new Size(200, 21);
             descLabel.TabIndex = 19;
@@ -151,9 +151,11 @@
             // labeldesc
             // 
             labeldesc.AutoSize = true;
-            labeldesc.Location = new Point(43, 176);
+            labeldesc.Font = new Font("Bahnschrift SemiBold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            labeldesc.ForeColor = SystemColors.ButtonHighlight;
+            labeldesc.Location = new Point(43, 130);
             labeldesc.Name = "labeldesc";
-            labeldesc.Size = new Size(85, 20);
+            labeldesc.Size = new Size(95, 21);
             labeldesc.TabIndex = 22;
             labeldesc.Text = "Description";
             labeldesc.Click += labeldesc_Click;
