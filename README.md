@@ -27,10 +27,3 @@ Upon launching the application, you can choose between three tasks: replacing bo
 - If user's answer is incorrect, -1 point
 - Background sounds has also been added upon each user input
 
-
-## Part 2: Identify Areas
-- User can complete match the description
-- Gamification feature modified
-
-## License
-This project is not open-sourced
