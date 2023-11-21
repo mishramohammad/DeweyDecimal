@@ -35,6 +35,7 @@
             lblPoints = new Label();
             lblScore = new Label();
             nxtBtn = new Button();
+            backBtton = new Button();
             SuspendLayout();
             // 
             // label1
@@ -146,12 +147,25 @@
             nxtBtn.UseVisualStyleBackColor = false;
             nxtBtn.Click += nxtBtn_Click;
             // 
+            // backBtton
+            // 
+            backBtton.BackColor = Color.PaleGreen;
+            backBtton.Font = new Font("Bahnschrift SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            backBtton.Location = new Point(12, 12);
+            backBtton.Name = "backBtton";
+            backBtton.Size = new Size(78, 38);
+            backBtton.TabIndex = 9;
+            backBtton.Text = "Back";
+            backBtton.UseVisualStyleBackColor = false;
+            backBtton.Click += backBtton_Click;
+            // 
             // ReplaceBooks
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSeaGreen;
             ClientSize = new Size(800, 450);
+            Controls.Add(backBtton);
             Controls.Add(nxtBtn);
             Controls.Add(lblScore);
             Controls.Add(lblPoints);
@@ -172,5 +186,6 @@
         private Label lblPoints;
         private Label lblScore;
         private Button nxtBtn;
+        private Button backBtton;
     }
 }

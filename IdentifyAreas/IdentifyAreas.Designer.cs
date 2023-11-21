@@ -37,6 +37,7 @@
             newBtn = new Button();
             labelScore = new Label();
             lblScores = new Label();
+            bckBtn = new Button();
             SuspendLayout();
             // 
             // lblHeading
@@ -142,12 +143,25 @@
             lblScores.TabIndex = 14;
             lblScores.Text = "0";
             // 
+            // bckBtn
+            // 
+            bckBtn.BackColor = Color.Pink;
+            bckBtn.Font = new Font("Bahnschrift SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            bckBtn.Location = new Point(12, 12);
+            bckBtn.Name = "bckBtn";
+            bckBtn.Size = new Size(78, 38);
+            bckBtn.TabIndex = 15;
+            bckBtn.Text = "Back";
+            bckBtn.UseVisualStyleBackColor = false;
+            bckBtn.Click += bckBtn_Click;
+            // 
             // IdentifyAreas
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DeepPink;
             ClientSize = new Size(800, 450);
+            Controls.Add(bckBtn);
             Controls.Add(lblScores);
             Controls.Add(labelScore);
             Controls.Add(newBtn);
@@ -174,5 +188,6 @@
         private Button newBtn;
         private Label labelScore;
         private Label lblScores;
+        private Button bckBtn;
     }
 }

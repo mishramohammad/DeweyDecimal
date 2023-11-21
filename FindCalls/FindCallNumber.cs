@@ -69,9 +69,22 @@ namespace DeweySystem.FindCalls
 
         private void GenerateNewQuestion()
         {
-            // Randomly select a third-level entry.
+            if (root?.Children == null)
+            {
+                MessageBox.Show("Error: Data not loaded correctly.");
+                return;
+            }
+
+            //randomly select a third-level entry.
             var thirdLevelNodes = root.Children.SelectMany(c => c.Children).SelectMany(c => c.Children).ToList();
             correctAnswer = thirdLevelNodes[random.Next(thirdLevelNodes.Count)];
+
+            //check if correctAnswer or correctAnswer.Parent is null.
+            if (correctAnswer?.Parent?.Parent == null)
+            {
+                MessageBox.Show("Error: Data not loaded correctly.");
+                return;
+            }
 
             // Select the correct top-level category and three incorrect ones.
             currentOptions = new List<CallNumbers> { correctAnswer.Parent.Parent };

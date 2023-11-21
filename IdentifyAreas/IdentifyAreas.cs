@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NAudio.Wave;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NAudio.Wave;
 
 namespace DeweySystem.IdentifyAreas
 {
@@ -113,11 +115,16 @@ namespace DeweySystem.IdentifyAreas
                         //answer is correct
                         score++;
                         MessageBox.Show("Correct answer! Your score is now " + score, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        // correct sound when the answer is correct
+                        PlaySound(@"C:\Users\mishr\Dropbox\My PC (LAPTOP-B41IIIGC)\Downloads\correct-6033.mp3");
                     }
+
                     else
                     {
                         //answer is incorrect
                         MessageBox.Show("Incorrect answer. Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        // incorrect answer sound
+                        PlaySound(@"C:\Users\mishr\Dropbox\My PC (LAPTOP-B41IIIGC)\Downloads\negative_beeps-6008.mp3");
                     }
                 }
                 else
@@ -133,6 +140,26 @@ namespace DeweySystem.IdentifyAreas
             }
         }
 
+        private void PlaySound(string filePath)
+        {
+            try
+            {
+                using (var reader = new Mp3FileReader(filePath))
+                using (var waveOut = new WaveOutEvent())
+                {
+                    waveOut.Init(reader);
+                    waveOut.Play();
+                    while (waveOut.PlaybackState == PlaybackState.Playing)
+                    {
+                        System.Threading.Thread.Sleep(100);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error playing sound: {ex.Message}");
+            }
+        }
 
         private void newBtn_Click(object sender, EventArgs e)
         {
@@ -142,6 +169,13 @@ namespace DeweySystem.IdentifyAreas
         private void labelScore_Click(object sender, EventArgs e)
         {
             //
+        }
+
+        private void bckBtn_Click(object sender, EventArgs e)
+        {
+            DeweySystem.ReplaceBooks.ReplaceBooks replaceBooksForm = new DeweySystem.ReplaceBooks.ReplaceBooks();
+            replaceBooksForm.Show();
+            this.Hide();
         }
     }
 }

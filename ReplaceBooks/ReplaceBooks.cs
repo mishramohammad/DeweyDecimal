@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using NAudio.Wave;
 
 namespace DeweySystem.ReplaceBooks
 {
@@ -59,6 +60,9 @@ namespace DeweySystem.ReplaceBooks
                 listClass.GetSortList().Clear();
                 listClass.GetNoList().Clear();
 
+                // correct sound when the answer is correct
+                PlaySound(@"C:\Users\mishr\Dropbox\My PC (LAPTOP-B41IIIGC)\Downloads\correct-6033.mp3");
+
                 //new 10 numbers
                 for (int i = 0; i < 10; i++)
                 {
@@ -76,10 +80,33 @@ namespace DeweySystem.ReplaceBooks
             {
                 //user gets it wrong, they try again
                 MessageBox.Show("Try Again!\nYour Call Numbers Are Not Ordered!");
+                // incorrect answer sound
+                PlaySound(@"C:\Users\mishr\Dropbox\My PC (LAPTOP-B41IIIGC)\Downloads\negative_beeps-6008.mp3");
 
                 //displays the correct answer in listBoxCheck
                 listBoxCheck.Items.Clear();
                 listBoxCheck.Items.AddRange(listClass.GetSortList().ToArray());
+            }
+        }
+
+        private void PlaySound(string filePath)
+        {
+            try
+            {
+                using (var reader = new Mp3FileReader(filePath))
+                using (var waveOut = new WaveOutEvent())
+                {
+                    waveOut.Init(reader);
+                    waveOut.Play();
+                    while (waveOut.PlaybackState == PlaybackState.Playing)
+                    {
+                        System.Threading.Thread.Sleep(100);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error playing sound: {ex.Message}");
             }
         }
 
@@ -122,6 +149,13 @@ namespace DeweySystem.ReplaceBooks
             DeweySystem.IdentifyAreas.IdentifyAreas identifyAreasForm = new DeweySystem.IdentifyAreas.IdentifyAreas();
             identifyAreasForm.Show();
             this.Hide();
+        }
+
+        private void backBtton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 form1 = new Form1();
+            form1.Show();
         }
     }
 }
