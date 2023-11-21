@@ -6,13 +6,15 @@ namespace DeweySystem.FindCalls
 {
     public class CallNumbers
     {
-        public string CallNum { get; set; }
+        public string Code { get; set; }
         public string Description { get; set; }
+        public List<CallNumbers> Children { get; set; }
 
-        public CallNumbers(string callNum, string description)
+        public CallNumbers(string code, string description)
         {
-            CallNum = callNum;
+            Code = code;
             Description = description;
+            Children = new List<CallNumbers>();
         }
     }
 }

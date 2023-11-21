@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "TOX5zNV3bR9a875KLMIhQfCzM8oUK92qbobNEkHFG8tXIz5Ni0emJOdAOoy/bhGgQgEuQc4nICYTbvVZtPOihw==",
+  "dgSpecHash": "kD/iRB8g7GYeZYethPUTQ24i4b0qAKd8/tlo8qJGW6PybQCQhzaxLKCkqRgyIPYW7d1CMNqmH/0WmK31i1/Ztg==",
   "success": true,
   "projectFilePath": "C:\\Users\\mishr\\source\\repos\\DeweySystem\\DeweySystem.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\mishr\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

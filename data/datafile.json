@@ -1,0 +1,307 @@
+{
+    "id": "Dewey",
+    "label": "Dewey",
+    "children": [
+      {
+        "id": "000",
+        "label": "Generalities",
+        "children": [
+          {
+            "id": "010",
+            "label": "Bibliography",
+            "children": [
+              { "id": "011", "label": "Bibliographies" },
+              { "id": "019", "label": "Dictionary catalogs" }
+            ]
+          },
+          {
+            "id": "030",
+            "label": "General encyclopedic works",
+            "children": [
+              { "id": "032", "label": "General encyclopedic works in English" },
+              { "id": "038", "label": "General encyclopedic works in Scandinavian languages" }
+            ]
+          },
+          {
+            "id": "050",
+            "label": "General serials & their indexes",
+            "children": [
+              { "id": "056", "label": "General serials & their indexes In Spanish" },
+              { "id": "057", "label": "General serials & their indexes In Slavic languages" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "100",
+        "label": "Philosophy & Psychology",
+        "children": [
+          {
+            "id": "110",
+            "label": "Metaphysics",
+            "children": [
+              { "id": "111", "label": "Ontology" },
+              { "id": "113", "label": "Cosmology (Philosophy of nature)" }
+            ]
+          },
+          {
+            "id": "150",
+            "label": "Psychology",
+            "children": [
+              { "id": "153", "label": "Mental processes & intelligence" },
+              { "id": "156", "label": "Comparative psychology" }
+            ]
+          },
+          {
+            "id": "180",
+            "label": "Ancient, medieval, Oriental philosophy",
+            "children": [
+              { "id": "181", "label": "Oriental philosophy" },
+              { "id": "184", "label": "Platonic philosophy" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "200",
+        "label": "Religion",
+        "children": [
+          {
+            "id": "210",
+            "label": "Philosophy and theory of religion",
+            "children": [
+              { "id": "214", "label": "Theodicy" },
+              { "id": "215", "label": "Science & Religion" }
+            ]
+          },
+          {
+            "id": "280",
+            "label": "Christian denominations & sects",
+            "children": [
+              { "id": "281", "label": "Early church & Eastern churches" },
+              { "id": "287", "label": "Methodist & related churches" }
+            ]
+          },
+          {
+            "id": "290",
+            "label": "Other & comparative religions",
+            "children": [
+              { "id": "291", "label": "Comparative religion" },
+              { "id": "294", "label": "Religions of Indic origin" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "300",
+        "label": "Social Sciences",
+        "children": [
+          {
+            "id": "310",
+            "label": "Statistics",
+            "children": [
+              { "id": "314", "label": "General statistics Of Europe" },
+              { "id": "315", "label": "General statistics Of Asia" }
+            ]
+          },
+          {
+            "id": "320",
+            "label": "Political Science",
+            "children": [
+              { "id": "325", "label": "International migration & colonization" },
+              { "id": "328", "label": "The legislative process" }
+            ]
+          },
+          {
+            "id": "370",
+            "label": "Education",
+            "children": [
+              { "id": "372", "label": "Elementary education" },
+              { "id": "375", "label": "Curriculums" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "400",
+        "label": "Language",
+        "children": [
+          {
+            "id": "410",
+            "label": "Linguistics",
+            "children": [
+              { "id": "414", "label": "Phonology" },
+              { "id": "415", "label": "Structural systems (Grammar)" }
+            ]
+          },
+          {
+            "id": "450",
+            "label": "Italian, Romanian, and related languages",
+            "children": [
+              { "id": "451", "label": "Italian writing system & phonology" },
+              { "id": "452", "label": "Italian etymology" }
+            ]
+          },
+          {
+            "id": "470",
+            "label": "Italic Latin",
+            "children": [
+              { "id": "471", "label": "Classical Latin writing & phonology" },
+              { "id": "473", "label": "Classical Latin dictionaries" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "500",
+        "label": "Science",
+        "children": [
+          {
+            "id": "510",
+            "label": "Mathematics",
+            "children": [
+              { "id": "514", "label": "Topology" },
+              { "id": "515", "label": "Analysis" }
+            ]
+          },
+          {
+            "id": "530",
+            "label": "Physics",
+            "children": [
+              { "id": "531", "label": "Classical mechanics Solid mechanics" },
+              { "id": "533", "label": "Gas mechanics" }
+            ]
+          },
+          {
+            "id": "580",
+            "label": "Botanical sciences",
+            "children": [
+              { "id": "581", "label": "Botany" },
+              { "id": "588", "label": "Bryophyta" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "600",
+        "label": "Technology",
+        "children": [
+          {
+            "id": "640",
+            "label": "Home economics & family living",
+            "children": [
+              { "id": "643", "label": "Housing & household equipment" },
+              { "id": "644", "label": "Household utilities" }
+            ]
+          },
+          {
+            "id": "650",
+            "label": "Management & auxiliary services",
+            "children": [
+              { "id": "651", "label": "Office services" },
+              { "id": "653", "label": "Shorthand" }
+            ]
+          },
+          {
+            "id": "660",
+            "label": "Chemical engineering",
+            "children": [
+              { "id": "664", "label": "Food technology" },
+              { "id": "665", "label": "Industrial oils, fats, waxes, gases" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "700",
+        "label": "Arts & Recreation",
+        "children": [
+          {
+            "id": "710",
+            "label": "Civic & landscape art",
+            "children": [
+              { "id": "712", "label": "Landscape design of cities" },
+              { "id": "713", "label": "Landscape architecture of playgrounds, parks, etc." }
+            ]
+          },
+          {
+            "id": "730",
+            "label": "Plastic arts Sculpture",
+            "children": [
+              { "id": "731", "label": "Processes, forms, subjects of sculpture" },
+              { "id": "732", "label": "Sculpture for gardens, parks, public spaces" }
+            ]
+          },
+          {
+            "id": "770",
+            "label": "Photography & photographs",
+            "children": [
+              { "id": "771", "label": "Photography collections in general" },
+              { "id": "772", "label": "Collectors and collecting" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "800",
+        "label": "Literature",
+        "children": [
+          {
+            "id": "840",
+            "label": "Literatures of Romance languages",
+            "children": [
+              { "id": "841", "label": "Provençal literature" },
+              { "id": "848", "label": "Iberian Peninsula & adjacent islands" }
+            ]
+          },
+          {
+            "id": "860",
+            "label": "Spanish & Portuguese literatures",
+            "children": [
+              { "id": "861", "label": "Spanish poetry" },
+              { "id": "864", "label": "Spanish fiction" }
+            ]
+          },
+          {
+            "id": "870",
+            "label": "General works on Latin literature",
+            "children": [
+              { "id": "871", "label": "Latin poetry" },
+              { "id": "874", "label": "Latin speeches" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "900",
+        "label": "History & Geography",
+        "children": [
+          {
+            "id": "910",
+            "label": "Geography & travel",
+            "children": [
+              { "id": "911", "label": "Historical geography" },
+              { "id": "913", "label": "Ancient world" }
+            ]
+          },
+          {
+            "id": "950",
+            "label": "General history of Asia Far East",
+            "children": [
+              { "id": "952", "label": "General history of Asia Japan" },
+              { "id": "954", "label": "General history of Asia South Asia India" }
+            ]
+          },
+          {
+            "id": "990",
+            "label": "General history of other areas",
+            "children": [
+              { "id": "993", "label": "General history of other areas New Zealand" },
+              { "id": "995", "label": "General history of other areas Melanesia New Guinea" }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+  

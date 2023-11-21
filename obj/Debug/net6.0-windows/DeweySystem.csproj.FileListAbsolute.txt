@@ -18,3 +18,4 @@ C:\Users\mishr\source\repos\DeweySystem\obj\Debug\net6.0-windows\refint\DeweySys
 C:\Users\mishr\source\repos\DeweySystem\obj\Debug\net6.0-windows\DeweySystem.pdb
 C:\Users\mishr\source\repos\DeweySystem\obj\Debug\net6.0-windows\DeweySystem.genruntimeconfig.cache
 C:\Users\mishr\source\repos\DeweySystem\obj\Debug\net6.0-windows\ref\DeweySystem.dll
+C:\Users\mishr\source\repos\DeweySystem\obj\Debug\net6.0-windows\DeweySystem.FindCalls.FindCallNumber.resources

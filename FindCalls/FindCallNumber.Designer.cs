@@ -33,6 +33,10 @@
             ScoreNo = new Label();
             subBtn = new Button();
             mainBtn = new Button();
+            newBtn = new Button();
+            descLabel = new Label();
+            choiceLabel = new Label();
+            listBoxAnswer = new ListBox();
             SuspendLayout();
             // 
             // lblHeading2
@@ -76,12 +80,13 @@
             subBtn.BackColor = Color.Gold;
             subBtn.Font = new Font("Bahnschrift SemiBold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             subBtn.ForeColor = SystemColors.ActiveCaptionText;
-            subBtn.Location = new Point(117, 349);
+            subBtn.Location = new Point(86, 370);
             subBtn.Name = "subBtn";
             subBtn.Size = new Size(125, 41);
             subBtn.TabIndex = 16;
             subBtn.Text = "Submit";
             subBtn.UseVisualStyleBackColor = false;
+            subBtn.Click += subBtn_Click;
             // 
             // mainBtn
             // 
@@ -96,12 +101,63 @@
             mainBtn.UseVisualStyleBackColor = false;
             mainBtn.Click += mainBtn_Click;
             // 
+            // newBtn
+            // 
+            newBtn.BackColor = Color.DarkOrange;
+            newBtn.Font = new Font("Bahnschrift SemiBold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            newBtn.ForeColor = SystemColors.ActiveCaptionText;
+            newBtn.Location = new Point(302, 370);
+            newBtn.Name = "newBtn";
+            newBtn.Size = new Size(79, 41);
+            newBtn.TabIndex = 18;
+            newBtn.Text = "New";
+            newBtn.UseVisualStyleBackColor = false;
+            newBtn.Click += newBtn_Click;
+            // 
+            // descLabel
+            // 
+            descLabel.AutoSize = true;
+            descLabel.Font = new Font("Bahnschrift", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            descLabel.ForeColor = SystemColors.ButtonHighlight;
+            descLabel.Location = new Point(43, 130);
+            descLabel.Name = "descLabel";
+            descLabel.Size = new Size(200, 21);
+            descLabel.TabIndex = 19;
+            descLabel.Text = "Call Number Description:";
+            descLabel.Click += descLabel_Click;
+            // 
+            // choiceLabel
+            // 
+            choiceLabel.AutoSize = true;
+            choiceLabel.Font = new Font("Bahnschrift", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            choiceLabel.ForeColor = SystemColors.ButtonHighlight;
+            choiceLabel.Location = new Point(43, 222);
+            choiceLabel.Name = "choiceLabel";
+            choiceLabel.Size = new Size(64, 21);
+            choiceLabel.TabIndex = 20;
+            choiceLabel.Text = "Choice:";
+            choiceLabel.Click += choiceLabel_Click;
+            // 
+            // listBoxAnswer
+            // 
+            listBoxAnswer.FormattingEnabled = true;
+            listBoxAnswer.ItemHeight = 20;
+            listBoxAnswer.Location = new Point(43, 261);
+            listBoxAnswer.Name = "listBoxAnswer";
+            listBoxAnswer.Size = new Size(459, 64);
+            listBoxAnswer.TabIndex = 21;
+            listBoxAnswer.SelectedIndexChanged += listBoxAnswer_SelectedIndexChanged;
+            // 
             // FindCallNumber
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.SteelBlue;
             ClientSize = new Size(800, 450);
+            Controls.Add(listBoxAnswer);
+            Controls.Add(choiceLabel);
+            Controls.Add(descLabel);
+            Controls.Add(newBtn);
             Controls.Add(mainBtn);
             Controls.Add(subBtn);
             Controls.Add(ScoreNo);
@@ -121,5 +177,9 @@
         private Label ScoreNo;
         private Button subBtn;
         private Button mainBtn;
+        private Button newBtn;
+        private Label descLabel;
+        private Label choiceLabel;
+        private ListBox listBoxAnswer;
     }
 }
