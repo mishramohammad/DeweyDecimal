@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -8,8 +9,8 @@ namespace DeweySystem.FindCalls
     {
         public CallNumbers Create()
         {
-            var root = new CallNumbers("Dewey", "Dewey");
-            MakeTree(root);
+            var json = File.ReadAllText("C:\\Users\\mishr\\source\\repos\\DeweySystem\\data\\datafile.json");
+            var root = JsonConvert.DeserializeObject<CallNumbers>(json);
             return root;
         }
 

@@ -6,17 +6,20 @@ namespace DeweySystem.FindCalls
 {
     public class CallNumbers
     {
-        public string Code { get; set; }
-        public string Description { get; set; }
+        public string Id { get; set; }
+        public string Label { get; set; }
         public List<CallNumbers> Children { get; set; }
+        public CallNumbers Parent { get; set; }
 
-        public CallNumbers(string code, string description)
+        public CallNumbers(string id, string label)
         {
-            Code = code;
-            Description = description;
+            Id = id;
+            Label = label;
             Children = new List<CallNumbers>();
         }
     }
+
+
 }
 
 //reference : Beginning Data Structures and Algorithms in C# : Basic Trees. 2018. [Online].

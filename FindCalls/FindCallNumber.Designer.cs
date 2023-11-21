@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             lblHeading2 = new Label();
             lbelScore = new Label();
             ScoreNo = new Label();
@@ -36,7 +37,7 @@
             newBtn = new Button();
             descLabel = new Label();
             choiceLabel = new Label();
-            listBoxAnswer = new ListBox();
+            choiceBox = new ComboBox();
             SuspendLayout();
             // 
             // lblHeading2
@@ -138,15 +139,14 @@
             choiceLabel.Text = "Choice:";
             choiceLabel.Click += choiceLabel_Click;
             // 
-            // listBoxAnswer
+            // choiceBox
             // 
-            listBoxAnswer.FormattingEnabled = true;
-            listBoxAnswer.ItemHeight = 20;
-            listBoxAnswer.Location = new Point(43, 261);
-            listBoxAnswer.Name = "listBoxAnswer";
-            listBoxAnswer.Size = new Size(459, 64);
-            listBoxAnswer.TabIndex = 21;
-            listBoxAnswer.SelectedIndexChanged += listBoxAnswer_SelectedIndexChanged;
+            choiceBox.FormattingEnabled = true;
+            choiceBox.Location = new Point(53, 263);
+            choiceBox.Name = "choiceBox";
+            choiceBox.Size = new Size(417, 28);
+            choiceBox.TabIndex = 21;
+            choiceBox.SelectedIndexChanged += choiceBox_SelectedIndexChanged;
             // 
             // FindCallNumber
             // 
@@ -154,7 +154,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.SteelBlue;
             ClientSize = new Size(800, 450);
-            Controls.Add(listBoxAnswer);
+            Controls.Add(choiceBox);
             Controls.Add(choiceLabel);
             Controls.Add(descLabel);
             Controls.Add(newBtn);
@@ -180,6 +180,6 @@
         private Button newBtn;
         private Label descLabel;
         private Label choiceLabel;
-        private ListBox listBoxAnswer;
+        private ComboBox choiceBox;
     }
 }

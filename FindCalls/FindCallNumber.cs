@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using NAudio.Wave;
 
 namespace DeweySystem.FindCalls
 {
@@ -28,12 +30,10 @@ namespace DeweySystem.FindCalls
         public FindCallNumber()
         {
             InitializeComponent();
-            InitializeComponent();
 
             createTree = new CreateTree();
             root = createTree.Create();
         }
-
 
         private void lblHeading2_Click(object sender, EventArgs e)
         {
@@ -55,6 +55,7 @@ namespace DeweySystem.FindCalls
             var dataLoad = new DataLoad();
             root = dataLoad.LoadDataFromFile("C:\\Users\\mishr\\source\\repos\\DeweySystem\\data\\datafile.json");
             GenerateNewQuestion();
+
         }
 
         private void mainBtn_Click(object sender, EventArgs e)
@@ -71,62 +72,83 @@ namespace DeweySystem.FindCalls
 
         private void subBtn_Click(object sender, EventArgs e)
         {
-            if (listBoxAnswer.SelectedItem != null && listBoxAnswer.SelectedItem.ToString() == correctAnswer.Code + " " + correctAnswer.Description)
+            if (choiceBox.SelectedItem != null && choiceBox.SelectedItem.ToString() == correctAnswer.Id + " " + correctAnswer.Label)
             {
                 score += 5;
                 ScoreNo.Text = score.ToString();
                 MessageBox.Show("Correct! Moving to the next level.");
-                GenerateNewQuestion();
+
+                //correct sound when the answer is correct
+                PlaySound(@"C:\Users\mishr\Dropbox\My PC (LAPTOP-B41IIIGC)\Downloads\correct-6033.mp3");
             }
             else
             {
                 MessageBox.Show("Wrong answer! Try Again");
+
+                //incorrect answer sound
+                PlaySound(@"C:\Users\mishr\Dropbox\My PC (LAPTOP-B41IIIGC)\Downloads\negative_beeps-6008.mp3");
             }
         }
+
+        private void PlaySound(string filePath)
+        {
+            try
+            {
+                using (var reader = new Mp3FileReader(filePath))
+                using (var waveOut = new WaveOutEvent())
+                {
+                    waveOut.Init(reader);
+                    waveOut.Play();
+                    while (waveOut.PlaybackState == PlaybackState.Playing)
+                    {
+                        System.Threading.Thread.Sleep(100);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error playing sound: {ex.Message}");
+            }
+        }
+
 
         private void GenerateNewQuestion()
         {
-            //random third-level entry
-            var thirdLevelNodes = root.Children.SelectMany(c => c.Children).SelectMany(c => c.Children).ToList();
-            correctAnswer = thirdLevelNodes[random.Next(thirdLevelNodes.Count)];
+            // random third-level entry
+            var thirdLevelNodes = root?.Children?.SelectMany(c => c.Children)?.SelectMany(c => c.Children)?.ToList();
 
-            descLabel.Text = correctAnswer.Description;
-
-            currentOptions = new List<CallNumbers> { correctAnswer.Parent };
-            while (currentOptions.Count < 4)
+            if (thirdLevelNodes != null && thirdLevelNodes.Any())
             {
-                var randomOption = root.Children[random.Next(root.Children.Count)].Children[random.Next(root.Children[random.Next(root.Children.Count)].Children.Count)];
-                if (!currentOptions.Contains(randomOption))
+                correctAnswer = thirdLevelNodes[random.Next(thirdLevelNodes.Count)];
+
+                descLabel.Text = correctAnswer?.Label;
+
+                currentOptions = new List<CallNumbers> { correctAnswer?.Parent };
+                while (currentOptions.Count < 4)
                 {
-                    currentOptions.Add(randomOption);
+                    var randomOption = root?.Children?[random.Next(root.Children.Count)]?.Children?[random.Next(root.Children?[random.Next(root.Children.Count)]?.Children?.Count ?? 0)] ?? null;
+                    if (randomOption != null && !currentOptions.Contains(randomOption))
+                    {
+                        currentOptions.Add(randomOption);
+                    }
                 }
-            }
 
-            currentOptions = currentOptions.OrderBy(_ => random.Next()).ToList();
+                //takes first one as correct
+                currentOptions = currentOptions?.OrderBy(_ => random.Next()).ToList();
 
-            listBoxAnswer.Items.Clear();
-            foreach (var option in currentOptions)
-            {
-                listBoxAnswer.Items.Add(option.Code + " " + option.Description);
-            }
-        }
-
-
-        private void listBoxAnswer_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //checks if choice is correct 
-            string selectedItem = listBoxAnswer.SelectedItem.ToString();
-            if (selectedItem == correctAnswer.CallNum + " " + correctAnswer.Description)
-            {
-                score += 5; //update the score by 5 points
-                ScoreNo.Text = score.ToString();
-                MessageBox.Show("Correct!");
+                choiceBox.Items.Clear();
+                foreach (var option in currentOptions)
+                {
+                    choiceBox.Items.Add(option?.Id + " " + option?.Label);
+                }
             }
             else
             {
-                MessageBox.Show("Wrong answer! Try Again");
+                MessageBox.Show("Error");
             }
         }
+
+
 
         private void choiceLabel_Click(object sender, EventArgs e)
         {
@@ -137,7 +159,16 @@ namespace DeweySystem.FindCalls
         {
             //
         }
+
+        private void choiceBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+ 
+
     }
 }
 
 //reference: https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-messages/cs1501
+//reference: https://learn.microsoft.com/en-us/dotnet/desktop/winforms/controls/how-to-play-a-sound-from-a-windows-form?view=netframeworkdesktop-4.8
