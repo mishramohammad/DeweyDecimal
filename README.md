@@ -27,12 +27,6 @@ Upon launching the application, you can choose between three tasks: replacing bo
 - If user's answer is incorrect, -1 point
 - Background sounds has also been added upon each user input
 
-### Feedback implemented
-
-## Part 1: Replace Books
-- Buttons have been added for all tasks
-- 10 random call numbers is now functional
-- Leaderboard gamification feature has been deleted and now updated to use a Points score system
 
 ## Part 2: Identify Areas
 - User can complete match the description
