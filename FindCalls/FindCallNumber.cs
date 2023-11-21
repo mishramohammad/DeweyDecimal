@@ -18,7 +18,6 @@ namespace DeweySystem.FindCalls
         private CallNumbers correctAnswer;
         private int score = 0;
 
-        private CreateTree createTree;
         private CallNumbers root;
         private List<CallNumbers> currentOptions;
 
@@ -31,8 +30,6 @@ namespace DeweySystem.FindCalls
         {
             InitializeComponent();
 
-            createTree = new CreateTree();
-            root = createTree.Create();
         }
 
         private void lblHeading2_Click(object sender, EventArgs e)
@@ -70,22 +67,50 @@ namespace DeweySystem.FindCalls
             GenerateNewQuestion();
         }
 
+        private void GenerateNewQuestion()
+        {
+            // Randomly select a third-level entry.
+            var thirdLevelNodes = root.Children.SelectMany(c => c.Children).SelectMany(c => c.Children).ToList();
+            correctAnswer = thirdLevelNodes[random.Next(thirdLevelNodes.Count)];
+
+            // Select the correct top-level category and three incorrect ones.
+            currentOptions = new List<CallNumbers> { correctAnswer.Parent.Parent };
+            while (currentOptions.Count < 4)
+            {
+                var randomOption = root.Children[random.Next(root.Children.Count)];
+                if (!currentOptions.Contains(randomOption))
+                {
+                    currentOptions.Add(randomOption);
+                }
+            }
+
+            // Shuffle the options and display them.
+            currentOptions = currentOptions.OrderBy(_ => random.Next()).ToList();
+            foreach (var option in currentOptions)
+            {
+                choiceBox.Items.Add(option.Id + " " + option.Label);
+            }
+        }
+
         private void subBtn_Click(object sender, EventArgs e)
         {
-            if (choiceBox.SelectedItem != null && choiceBox.SelectedItem.ToString() == correctAnswer.Id + " " + correctAnswer.Label)
+            if (choiceBox.SelectedItem.ToString() == correctAnswer.Parent.Parent.Id + " " + correctAnswer.Parent.Parent.Label)
             {
                 score += 5;
                 ScoreNo.Text = score.ToString();
                 MessageBox.Show("Correct! Moving to the next level.");
 
-                //correct sound when the answer is correct
+                // correct sound when the answer is correct
                 PlaySound(@"C:\Users\mishr\Dropbox\My PC (LAPTOP-B41IIIGC)\Downloads\correct-6033.mp3");
+
+                // Generate next question.
+                GenerateNewQuestion();
             }
             else
             {
                 MessageBox.Show("Wrong answer! Try Again");
 
-                //incorrect answer sound
+                // incorrect answer sound
                 PlaySound(@"C:\Users\mishr\Dropbox\My PC (LAPTOP-B41IIIGC)\Downloads\negative_beeps-6008.mp3");
             }
         }
@@ -112,44 +137,6 @@ namespace DeweySystem.FindCalls
         }
 
 
-        private void GenerateNewQuestion()
-        {
-            // random third-level entry
-            var thirdLevelNodes = root?.Children?.SelectMany(c => c.Children)?.SelectMany(c => c.Children)?.ToList();
-
-            if (thirdLevelNodes != null && thirdLevelNodes.Any())
-            {
-                correctAnswer = thirdLevelNodes[random.Next(thirdLevelNodes.Count)];
-
-                descLabel.Text = correctAnswer?.Label;
-
-                currentOptions = new List<CallNumbers> { correctAnswer?.Parent };
-                while (currentOptions.Count < 4)
-                {
-                    var randomOption = root?.Children?[random.Next(root.Children.Count)]?.Children?[random.Next(root.Children?[random.Next(root.Children.Count)]?.Children?.Count ?? 0)] ?? null;
-                    if (randomOption != null && !currentOptions.Contains(randomOption))
-                    {
-                        currentOptions.Add(randomOption);
-                    }
-                }
-
-                //takes first one as correct
-                currentOptions = currentOptions?.OrderBy(_ => random.Next()).ToList();
-
-                choiceBox.Items.Clear();
-                foreach (var option in currentOptions)
-                {
-                    choiceBox.Items.Add(option?.Id + " " + option?.Label);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Error");
-            }
-        }
-
-
-
         private void choiceLabel_Click(object sender, EventArgs e)
         {
             //
@@ -162,11 +149,13 @@ namespace DeweySystem.FindCalls
 
         private void choiceBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            //
         }
 
- 
-
+        private void labeldesc_Click(object sender, EventArgs e)
+        {
+            //
+        }
     }
 }
 

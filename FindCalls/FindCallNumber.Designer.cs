@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
             lblHeading2 = new Label();
             lbelScore = new Label();
             ScoreNo = new Label();
@@ -38,6 +37,7 @@
             descLabel = new Label();
             choiceLabel = new Label();
             choiceBox = new ComboBox();
+            labeldesc = new Label();
             SuspendLayout();
             // 
             // lblHeading2
@@ -142,11 +142,21 @@
             // choiceBox
             // 
             choiceBox.FormattingEnabled = true;
-            choiceBox.Location = new Point(53, 263);
+            choiceBox.Location = new Point(43, 264);
             choiceBox.Name = "choiceBox";
             choiceBox.Size = new Size(417, 28);
             choiceBox.TabIndex = 21;
             choiceBox.SelectedIndexChanged += choiceBox_SelectedIndexChanged;
+            // 
+            // labeldesc
+            // 
+            labeldesc.AutoSize = true;
+            labeldesc.Location = new Point(43, 176);
+            labeldesc.Name = "labeldesc";
+            labeldesc.Size = new Size(85, 20);
+            labeldesc.TabIndex = 22;
+            labeldesc.Text = "Description";
+            labeldesc.Click += labeldesc_Click;
             // 
             // FindCallNumber
             // 
@@ -154,6 +164,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.SteelBlue;
             ClientSize = new Size(800, 450);
+            Controls.Add(labeldesc);
             Controls.Add(choiceBox);
             Controls.Add(choiceLabel);
             Controls.Add(descLabel);
@@ -181,5 +192,6 @@
         private Label descLabel;
         private Label choiceLabel;
         private ComboBox choiceBox;
+        private Label labeldesc;
     }
 }
